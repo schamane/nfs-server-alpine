@@ -1,0 +1,39 @@
+name: build-and-publish-image
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'build-and-publish-image base tag'
+        required: true
+        default: '0.1.0'
+
+jobs:
+  build:
+    runs-on: [self-hosted, linux]
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set TAG
+        id: set-tag
+        run: echo ::set-output name=SOURCE_TAG::${{ github.event.inputs.tag }}
+
+      - name: Build image
+        env:
+          SOURCE_TAG: ${{ steps.set-tag.outputs.SOURCE_TAG }}
+        run: |
+          docker-compose build --force-rm --no-cache
+
+      - name: Login to Compulypse Packages Docker Registry
+        uses: docker/login-action@v1
+        with:
+          registry: registry.cloud.compulypse.net
+          username: hub
+          password: ${{ secrets.REGISTRY_HUB_KEY }}
+
+      - name: Push build package
+        env:
+          SOURCE_TAG: ${{ steps.set-tag.outputs.SOURCE_TAG }}
+        run: |
+          docker-compose push
