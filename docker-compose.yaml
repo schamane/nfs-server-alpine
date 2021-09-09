@@ -1,4 +1,5 @@
 version: "3.8"
 services:
   nfs-server-alpine:
+    build: ./
     image: registry.cloud.compulypse.net/nfs-server-alpine:${SOURCE_TAG}
