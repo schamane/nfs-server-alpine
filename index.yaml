@@ -3,12 +3,12 @@ entries:
   nfs-server-alpine:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2021-09-26T11:25:23.695802708Z"
+    created: "2021-09-26T11:34:28.472122599Z"
     description: A Helm chart for NFS Server to be used with Hetzner Volume
-    digest: 6ce8dbe5c06528b4cc80b640b766650147ddaf636e365e0165f71e83142ac9b6
+    digest: 8eaed1af8ba3ff30ed96193f6cac7a78c0a7d73a6be241c3a115317ffcdd3d87
     name: nfs-server-alpine
     type: application
     urls:
-    - https://github.com/schamane/nfs-server-alpine/releases/download/nfs-server-alpine-1.0.0/nfs-server-alpine-1.0.0.tgz
-    version: 1.0.0
-generated: "2021-09-26T11:25:23.695808208Z"
+    - https://github.com/schamane/nfs-server-alpine/releases/download/nfs-server-alpine-1.0.1/nfs-server-alpine-1.0.1.tgz
+    version: 1.0.1
+generated: "2021-09-26T11:34:28.472133999Z"
