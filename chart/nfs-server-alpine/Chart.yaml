@@ -1,0 +1,6 @@
+apiVersion: v2
+name: nfs-server-alpine
+description: A Helm chart for NFS Server to be used with Hetzner Volume
+type: application
+version: 1.0.0
+appVersion: "1.0.0"
