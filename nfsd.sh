@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # Make sure we react to these signals by running stop() when we see them - for clean shutdown
 # And then exiting

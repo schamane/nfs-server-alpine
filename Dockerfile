@@ -1,9 +1,9 @@
-FROM alpine:3.15.4
+FROM alpine:3.14.6
 LABEL maintainer "Nazar Kulyk <schamane@myeburg.net>"
 LABEL source "https://github.com/schamane/nfs-server-alpine"
 LABEL branch "main"
 
-RUN apk add --no-cache --update --verbose nfs-utils bash iproute2 && \
+RUN apk add --no-cache --update --verbose nfs-utils iproute2 && \
     rm -rf /var/cache/apk /tmp /sbin/halt /sbin/poweroff /sbin/reboot && \
     mkdir -p /var/lib/nfs/rpc_pipefs /var/lib/nfs/v4recovery && \
     echo "rpc_pipefs    /var/lib/nfs/rpc_pipefs rpc_pipefs      defaults        0       0" >> /etc/fstab && \
